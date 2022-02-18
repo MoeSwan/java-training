@@ -1,6 +1,7 @@
 package test1;
+
 /**
- * <h2> Bike Class</h2>
+ * <h2>Bike Class</h2>
  * <p>
  * Process for Displaying Bike
  * </p>
@@ -8,12 +9,27 @@ package test1;
  * @author Hp
  *
  */
-public abstract class Bike{
-   abstract void run();
- 
+public abstract class Bike {
 
- public static void main(String args[]){
-  Bike obj = new Honda();
-  obj.run();
- }
- }
+	/**
+	 * <h2>run</h2>
+	 * <p>
+	 * 
+	 * </p>
+	 *
+	 */
+	abstract void run();
+
+	/**
+	 * <h2>main</h2>
+	 * <p>
+	 * 
+	 * </p>
+	 *
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		Bike obj = new Honda();
+		obj.run();
+	}
+}
