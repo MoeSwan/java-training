@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
+@Controller
 public class EmployeeController {
 	@Autowired
 	private EmployeeDAO employeeDAO;
@@ -46,7 +47,11 @@ public class EmployeeController {
 
 		return new ModelAndView("redirect:/employees");
 	}
-
+	
+	
+	  @RequestMapping(value = "/") public ModelAndView employees() { return new
+	  ModelAndView("redirect:/employees"); }
+	 
 	@RequestMapping(value = "/employees")
 	public ModelAndView listEmployees(@ModelAttribute("employee") Employee employee) {
 		ModelAndView model = new ModelAndView("employees");
